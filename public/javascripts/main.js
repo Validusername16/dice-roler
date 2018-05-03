@@ -1,21 +1,39 @@
 (function() {
-    let button1 = document.getElementById('oneDie'), button2 = document.getElementById('twoDice'), button3 = document.getElementById('threeDice'), button4 = document.getElementById('fourDice');
-    let howMany;
-    button1.addEventListener('click', function() {howMany = 1;
-        rollDice();
-    });
-    button2.addEventListener('click', function() {howMany = 2;
-        rollDice();
-    });
-    button3.addEventListener('click', function() {howMany = 3;
-        rollDice();
-    });
-    button4.addEventListener('click', function() {howMany = 4;
-        rollDice();
-    });
+    let d4 = document.getElementById('d4'), d6 = document.getElementById('d6'), d8 = document.getElementById('d8'), d10 = document.getElementById('d10'), d12 = document.getElementById('d12'), d20 = document.getElementById('d20'), d100=document.getElementById('d100');
+    let type;
+    d4.addEventListener('click', function() {
+        type = 4;
 
+    rollDice();
+
+    });
+    d6.addEventListener('click', function() {
+        type = 6;
+        rollDice();
+    });
+    d8.addEventListener('click', function() {
+        type = 8;
+        rollDice();
+    });
+    d10.addEventListener('click', function() {
+        type = 10;
+        rollDice();
+    });
+    d12.addEventListener('click', function() {
+        type = 12;
+        rollDice();
+    });
+    d20.addEventListener('click', function() {
+        type = 20;
+        rollDice();
+    });
+    d100.addEventListener('click', function() {type = 100;
+        rollDice();
+    });
+//4,6,8,10,12,20,100
     function rollDice() {
-        let type = prompt("How Many Faces Per Die?")-1;
+        type--;
+        let howMany = prompt("How Many Dice to roll?");
         let total = 0;
         let rolls = [];
         for (let i = 0; i < howMany; i++) {
