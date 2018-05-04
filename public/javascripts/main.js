@@ -1,6 +1,17 @@
 (function() {
-    let d4 = document.getElementById('d4'), d6 = document.getElementById('d6'), d8 = document.getElementById('d8'), d10 = document.getElementById('d10'), d12 = document.getElementById('d12'), d20 = document.getElementById('d20'), d100=document.getElementById('d100');
+    let d4 = document.getElementById('d4'), d6 = document.getElementById('d6'), d8 = document.getElementById('d8'), d10 = document.getElementById('d10'), d12 = document.getElementById('d12'), d20 = document.getElementById('d20'), d100=document.getElementById('d100'), slider = document.getElementById('mySlider'), sliderValue = document.getElementById('howMany');
     let type;
+    /*slider.oninput = function() {
+        sliderValue.innerHTML = slider.value();
+    };*/
+    let aSliderValue = slider.value;
+    sliderValue.innerHTML = aSliderValue;
+    slider.oninput = function() {
+
+        aSliderValue = slider.value;
+        sliderValue.innerHTML = aSliderValue;
+
+    };
     d4.addEventListener('click', function() {
         type = 4;
 
@@ -33,7 +44,7 @@
 //4,6,8,10,12,20,100
     function rollDice() {
         type--;
-        let howMany = prompt("How Many Dice to roll?");
+        howMany = aSliderValue;
         let total = 0;
         let rolls = [];
         for (let i = 0; i < howMany; i++) {

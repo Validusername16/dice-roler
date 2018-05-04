@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/foundation.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <h1>Dice Roller</h1>
 <h2>For people who are too lazy to get out actual dice</h2>
-<div id="buttons">
-<a class="expanded button"  id="d4">Roll a d4</a>
+<p id="howMany"></p>
+<div class = 'sliderContainer'>
+<input type="range" min="1" max="20" value="1" class="slider" id="mySlider" >
+</div>
+    <div id="buttons">
+
+    <a class="expanded button"  id="d4">Roll a d4</a>
 <a class="expanded button" id="d6">Roll a d6</a>
 <a class="expanded button" id="d8">Roll a d8</a>
 <a class="expanded button" id="d10">Roll a d10</a>
     <a class="expanded button" id="d12">Roll a d12</a>
     <a class="expanded button" id="d20">Roll a d20</a>
     <a class="expanded button" id="d100">Roll a d100</a>
+
 </div>
 <br/>
 <script type = "text/javascript" src = "../javascripts/main.js"></script>
-
 </body>
 </html>
